@@ -5,40 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 16:20:37 by aabidar           #+#    #+#             */
-/*   Updated: 2024/09/29 16:20:43 by aabidar          ###   ########.fr       */
+/*   Created: 2024/11/14 14:22:11 by aabidar           #+#    #+#             */
+/*   Updated: 2024/11/14 14:56:41 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
 
-std::string to_uppercase(std::string str)
+int main(int ac, char **av)
 {
-    unsigned long j = 0;
-    
-    while (j < str.length())
-    {
-        str[j] = std::toupper(str[j]);
-        j++;
-    }
-    return (str);
-}
+    int i,  j;
 
-int main(int ac, char *av[])
-{
-    int i = 1;
-    
     if (ac == 1)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     else
     {
+        i = 1;
         while (i < ac)
         {
-            std::string arg = av[i];
-            std::cout << to_uppercase(arg);
+            j = 0;
+            while (av[i][j] != '\0')
+            {
+                av[i][j] = std::toupper(av[i][j]);
+                j++;
+            }
+            std::cout << av[i];
             i++;
         }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
     return (0);
 }
