@@ -1,10 +1,10 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic # -std=c++98 to specify the standard we want to use | -pedantic to make the warning related to the standard become errors
 
-SRCS = megaphone.cpp
+SRCS = Contact.class.cpp PhoneBook.class.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = megaphone
+NAME = phonebook
 
 all: $(NAME)
 
