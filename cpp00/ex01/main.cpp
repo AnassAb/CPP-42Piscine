@@ -18,6 +18,7 @@ int prompt(void)
     std::string command;
 
     std::cout << "Enter command (ADD [A], SEARCH [S], EXIT [E]): " << std::endl;
+    //TODO: Understand how does "std::cin >> std::ws" work!
     std::getline(std::cin >> std::ws, command);     
     if (command == "ADD" || command == "A")
         return (1);
