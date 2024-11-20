@@ -6,12 +6,16 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:24:54 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/20 01:50:50 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/20 21:39:45 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+//TODO: what does pragma once do
+#pragma once
+#ifndef __CONTACT_H__
+#define __CONTACT_H__
 
+#include <string>
 class Contact 
 {
     public:
@@ -29,3 +33,5 @@ class Contact
         void    display_details(void);
         int     getContactInfo(int id);
 };
+
+#endif

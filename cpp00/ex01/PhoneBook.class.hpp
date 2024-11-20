@@ -6,9 +6,13 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:25:00 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/19 22:47:29 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/20 21:38:49 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
+#ifndef __PHONEBOOK_H__
+#define __PHONEBOOK_H__
 
 #include <string>
 #include "Contact.class.hpp"
@@ -27,3 +31,5 @@ class PhoneBook
         void    search(void);
         void    exit(void);
 };
+
+#endif
