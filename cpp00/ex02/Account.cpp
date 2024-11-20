@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 02:07:16 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/20 19:15:05 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/20 21:23:56 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # include <iostream>
 # include <ctime>
 
-
+//TODO: Why do we need to do this and is this the right way?
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
@@ -65,7 +65,10 @@ void	Account::displayAccountsInfos( void )
 
 void	Account::makeDeposit( int deposit )
 {
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";deposit:" << deposit;
     _amount += deposit;
+    std::cout << ";amount:" << _amount << ";nb_deposits:1" << std::endl; 
     Account::_totalAmount += deposit;
     _nbDeposits += 1;
     Account::_totalNbDeposits += 1;
@@ -73,9 +76,15 @@ void	Account::makeDeposit( int deposit )
 
 bool	Account::makeWithdrawal( int withdrawal )
 {
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex << ";p_amount:" << _amount << ";withdrawal:";
     if (withdrawal > _amount)
+    {
+        std::cout << "refused"<< std::endl;
         return (false);
+    }
     _amount -= withdrawal;
+    std::cout << withdrawal << ";amount:" << _amount << ";nb_withdrawals:1" << std::endl; 
     Account::_totalAmount -= withdrawal;
     _nbWithdrawals += 1;
     Account::_totalNbWithdrawals += 1;
@@ -93,6 +102,7 @@ void	Account::displayStatus( void ) const
     std::cout << "index:" << _accountIndex << ";amount:" << _amount << ";deposits:" << _nbDeposits << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
+//TODO: Timestamps
 void	Account::_displayTimestamp( void )
 {
     std::time_t now;
