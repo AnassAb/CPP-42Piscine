@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 03:42:49 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/24 07:13:08 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/24 07:27:55 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ void Harl::complain( std::string level )
         if (level == levels[i])
         {
             (this->*actions[i])();
-            break ;
+            return ;
         }
     }
+    std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
