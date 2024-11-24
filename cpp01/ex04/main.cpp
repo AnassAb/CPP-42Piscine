@@ -6,19 +6,26 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 20:17:30 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/23 02:42:09 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/24 03:36:12 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
-std::string replace(std::string data, std::string s1, std::string s2)
+void    replace(std::string &data, std::string s1, std::string s2)
 {
-    (void) data;
-    (void) s1;
-    (void) s2;
-    return ("hamid");
+    std::size_t s1_pos;
+
+    s1_pos = data.find(s1, 0);
+    while (s1_pos != std::string::npos)
+    {
+        data.erase(s1_pos, s1.length());
+        data.insert(s1_pos, s2);
+        s1_pos += s2.length();
+        s1_pos = data.find(s1, s1_pos);
+    }
 }
 
 int main(int ac, char **av)
@@ -30,18 +37,19 @@ int main(int ac, char **av)
         return (1);
     }
     
-    std::ifstream input(av[1]);
+    std::ifstream input(av[1], std::ios::in);
     if (!input)
     {
         std::cerr << "sed: couldn't open file: " << av[1] << std::endl;
         return (1);
     }
-    std::string data, new_data;
-    while (input >> data)
-        new_data += data + ' ';
 
-    std::cout << new_data << std::endl;
-
+    //TODO: understand ostringstreams and rdbuf
+    std::ostringstream buffer;
+    buffer << input.rdbuf(); 
+    
+    std::string new_data = buffer.str();
+    
     std::string outfile = std::string(av[1]) + ".replace";
     std::ofstream output(outfile.c_str());
     if (!output)
@@ -49,7 +57,8 @@ int main(int ac, char **av)
         std::cerr << "sed: couldn't open file: " << outfile << std::endl;
         return (1);
     }
-    output << replace(new_data, std::string(av[2]), std::string(av[3]));
+    replace(new_data, std::string(av[2]), std::string(av[3]));
+    output << new_data;
 
     return (0);
 }
