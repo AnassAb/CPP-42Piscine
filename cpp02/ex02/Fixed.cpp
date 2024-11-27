@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 08:29:44 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/27 14:01:22 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:25:59 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,14 +162,11 @@ Fixed& Fixed::min(Fixed& f1, Fixed& f2)
     return (f2);
 }
 
-Fixed& Fixed::min(const Fixed& f1, const Fixed& f2)
+const Fixed& Fixed::min(const Fixed& f1, const Fixed& f2)
 {
-    static Fixed   min;
     if (f1 < f2)
-        min = f1;
-    else
-        min = f2;
-    return (min);
+        return (f1);
+    return (f2);
 }
 
 Fixed& Fixed::max(Fixed& f1, Fixed& f2)
@@ -179,12 +176,9 @@ Fixed& Fixed::max(Fixed& f1, Fixed& f2)
     return (f2);
 }
 
-Fixed& Fixed::max(const Fixed& f1, const Fixed& f2)
+const Fixed& Fixed::max(const Fixed& f1, const Fixed& f2)
 {
-    static Fixed   max;
     if (f1 > f2)
-        max = f1;
-    else
-        max = f2;
-    return (max);
+        return (f1);
+    return (f2);
 }

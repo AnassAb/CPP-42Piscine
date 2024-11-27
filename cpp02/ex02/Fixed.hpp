@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 08:29:48 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/27 14:01:27 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:25:23 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ class Fixed
         Fixed   operator--( int );
         
         static  Fixed&  min(Fixed& f1, Fixed& f2);
-        static  Fixed&  min(const Fixed& f1, const Fixed& f2);
+        static  const Fixed&  min(const Fixed& f1, const Fixed& f2);
         static  Fixed&  max(Fixed& f1, Fixed& f2);
-        static  Fixed&  max(const Fixed& f1, const Fixed& f2);
+        static  const Fixed&  max(const Fixed& f1, const Fixed& f2);
 
         int     getRawBits(void) const;
         void    setRawBits( int const raw );

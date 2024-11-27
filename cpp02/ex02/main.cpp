@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 10:37:02 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/27 14:19:19 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:27:29 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int main( void )
     std::cout << b-- << std::endl;
     std::cout << b << std::endl;
 
-    std::cout << Fixed::max( a, b ) << std::endl;
-    std::cout << Fixed::min( a, b ) << std::endl;
+    std::cout << "max(" << a << ", " << b << ") = " << Fixed::max( a, b ) << std::endl;
+    std::cout << "min(" << a << ", " << b << ") = " << Fixed::min( a, b ) << std::endl;
 
     Fixed       c(a);
     std::cout << "a: "<< a.getRawBits() << std::endl;
