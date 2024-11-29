@@ -6,14 +6,12 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 10:37:02 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/27 14:27:29 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/27 18:31:29 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
-
-std::ostream& operator<< (std::ostream &os, const Fixed &f);
 
 int main( void ) 
 {

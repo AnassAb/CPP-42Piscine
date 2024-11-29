@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 08:29:48 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/24 11:47:57 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/27 18:31:50 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ class Fixed
         float toFloat( void ) const;
         int toInt( void ) const;
 };
+
+std::ostream& operator<< (std::ostream &os, const Fixed &f);
 
 #endif
