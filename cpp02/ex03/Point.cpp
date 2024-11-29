@@ -17,13 +17,12 @@ Point::Point( void ) : x(0), y(0)
 {
 }
 
-Point::Point( const float a, const float b ): x(a), y(b)
+Point::Point( const float a, const float b ) : x(a), y(b)
 {
 }
 
-Point::Point( const Point& p )
+Point::Point( const Point& p ) : x(p.x), y(p.y)
 {
-    *this = p;
 }
 
 Point::~Point( void )
@@ -32,7 +31,9 @@ Point::~Point( void )
 
 Point&  Point::operator=( const Point& p )
 {
-    ( void ) p;
+    // Since x and y are const, we can't modify them
+    // This is a limitation of the class design
+    (void)p;
     return (*this);
 }
 
