@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 08:29:48 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/27 18:31:23 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/29 02:49:01 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ class Fixed
         bool    operator==( const Fixed& other ) const;
         bool    operator!=( const Fixed& other ) const;
 
-        Fixed&  operator+( const Fixed& f );
-        Fixed&  operator-( const Fixed& f );
+        Fixed   operator+( const Fixed& f );
+        Fixed   operator-( const Fixed& f );
         Fixed   operator*( const Fixed& f );
-        Fixed  operator/( const Fixed& f );
+        Fixed   operator/( const Fixed& f );
 
         Fixed&  operator++( void );
-        Fixed   operator++( int );
         Fixed&  operator--( void );
+        Fixed   operator++( int );
         Fixed   operator--( int );
         
         static  Fixed&  min(Fixed& f1, Fixed& f2);

@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 10:24:23 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/20 02:04:33 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/11/29 02:51:42 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int prompt(void)
     std::string command;
 
     std::cout << "Enter command (ADD [A], SEARCH [S], EXIT [E]): " << std::endl;
-    //TODO: Understand how does "std::cin >> std::ws" work!
+    //TODO: Understand how does "std::cin >> std::ws" work or any of the streams!
     std::getline(std::cin >> std::ws, command);     
     if (command == "ADD" || command == "A")
         return (1);
