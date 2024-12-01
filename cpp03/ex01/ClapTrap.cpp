@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 18:39:58 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/01 02:06:56 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/01 02:38:22 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,20 +33,23 @@ ClapTrap::ClapTrap( std::string p_name, unsigned int p_hp, unsigned int p_ep, un
     std::cout << "Default Parameterized Constructor 2 is Called!" << std::endl;
 }
 
-ClapTrap::ClapTrap( const ClapTrap &other )
+ClapTrap::ClapTrap( const ClapTrap &other ) : 
+    name(other.name),
+    hit_points(other.hit_points),
+    energy_points(other.energy_points),
+    attack_damage(other.attack_damage)
 {
-    std::cout << "Default Copy Constructor is Called!" << std::endl;
-    (*this) = other;
+    std::cout << "ClapTrap Copy Constructor is Called!" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Default Destructor is Called!" << std::endl;
+    std::cout << "ClapTrap Destructor is Called!" << std::endl;
 }
 
 ClapTrap&   ClapTrap::operator=( const ClapTrap &other )
 {
-    std::cout << "Default Copy Assignement Operator is Called!" << std::endl;
+    std::cout << "ClapTrap Assignment Operator is Called!" << std::endl;
     if (this != &other)
     {
         name = other.name;
@@ -57,7 +60,7 @@ ClapTrap&   ClapTrap::operator=( const ClapTrap &other )
     return (*this);
 }
 
-int        ClapTrap::checkIfAble( std::string opr )
+int        ClapTrap::checkIfAble( std::string opr ) const
 {
     if (hit_points == 0 || energy_points == 0)
     {
@@ -81,9 +84,13 @@ void        ClapTrap::attack(const std::string& target)
 
 void        ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "Trap " << name << " took ";
+    if (amount > hit_points)
+        hit_points = 0;
+    else
+        hit_points -= amount;
+    std::cout << "ClapTrap " << name << " took ";
     std::cout << amount << " points of damage!" << std::endl;
-    attack_damage += amount;
+    hit_points -= attack_damage * amount;
 }
 
 void           ClapTrap::beRepaired(unsigned int amount)
@@ -101,4 +108,3 @@ std::string    ClapTrap::getName( void ) const
 {
     return (name);
 }
-

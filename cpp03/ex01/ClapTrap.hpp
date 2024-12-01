@@ -29,15 +29,15 @@ class ClapTrap
         ClapTrap( std::string pname );
         ClapTrap( std::string pname, unsigned int p_hp, unsigned int p_ep, unsigned int p_ad );
         ClapTrap( const ClapTrap &other );
-        ~ClapTrap();
+        virtual ~ClapTrap();
  
         ClapTrap&       operator=( const ClapTrap &other );
 
-        void            attack(const std::string& target);
+        virtual void    attack(const std::string& target);
         void            takeDamage(unsigned int amount);
         void            beRepaired(unsigned int amount);
 
-        int             checkIfAble( std::string opr );
+        int             checkIfAble( std::string opr ) const;
         std::string     getName( void ) const;
 
 };

@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 18:39:01 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/30 21:08:22 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/01 02:40:06 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class ClapTrap
         void            takeDamage(unsigned int amount);
         void            beRepaired(unsigned int amount);
 
-        int             checkIfAble( std::string opr );
+        int             checkIfAble( std::string opr ) const;
         std::string     getName( void ) const;
 
 };

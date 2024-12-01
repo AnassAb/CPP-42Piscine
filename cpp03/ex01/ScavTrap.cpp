@@ -36,14 +36,15 @@ ScavTrap::ScavTrap( std::string p_name, unsigned int p_hp, unsigned int p_ep, un
 ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap(other)
 {
     std::cout << "ScavTrap Copy Constructor" << std::endl;
-    (*this) = other;
 }
 
 ScavTrap&   ScavTrap::operator=(const ScavTrap& other)
 {
-    std::cout << "ScavTrap Copy Assignement Operator" << std::endl;
+    std::cout << "ScavTrap Assignment Operator" << std::endl;
     if (this != &other)
+    {
         ClapTrap::operator=(other);
+    }
     return (*this);
 }
 

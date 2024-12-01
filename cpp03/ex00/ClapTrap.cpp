@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 18:39:58 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/30 21:08:31 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/01 02:40:28 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap( void ) : hit_points(10), energy_points(10), attack_damage(0)
 
 ClapTrap::ClapTrap( std::string pname ) : name(pname), hit_points(10), energy_points(10), attack_damage(0)
 {
-    std::cout << "Default Parameterized Constructor is Called!" << std::endl;
+    std::cout << "Default Parameterized Constructor 0 is Called!" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &other )
@@ -47,7 +47,7 @@ ClapTrap&   ClapTrap::operator=( const ClapTrap &other )
     return (*this);
 }
 
-int        ClapTrap::checkIfAble( std::string opr )
+int        ClapTrap::checkIfAble( std::string opr ) const
 {
     if (hit_points == 0 || energy_points == 0)
     {
@@ -63,7 +63,7 @@ void        ClapTrap::attack(const std::string& target)
     if (checkIfAble("attack"))
     {
         std::cout << "ClapTrap " << name << " attacks ";
-        std::cout <<  target << ", causing " << 10; 
+        std::cout <<  target << ", causing " << attack_damage; 
         std::cout << " points of damage!" << std::endl;
         energy_points--;
     }
@@ -71,16 +71,20 @@ void        ClapTrap::attack(const std::string& target)
 
 void        ClapTrap::takeDamage(unsigned int amount)
 {
+    if (amount > hit_points)
+        hit_points = 0;
+    else
+        hit_points -= amount;
     std::cout << "ClapTrap " << name << " took ";
     std::cout << amount << " points of damage!" << std::endl;
-    attack_damage += amount;
+    hit_points -= attack_damage * amount;
 }
 
 void           ClapTrap::beRepaired(unsigned int amount)
 {
     if (checkIfAble("repair"))
     {
-        std::cout << "ClapTrap " << name << " repaired himself and got ";
+        std::cout << "Trap " << name << " repaired himself and got ";
         std::cout << amount << " hits points back!" << std::endl;
         energy_points--;
         hit_points += amount;
@@ -91,4 +95,3 @@ std::string    ClapTrap::getName( void ) const
 {
     return (name);
 }
-
