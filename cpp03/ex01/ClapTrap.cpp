@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 18:39:58 by aabidar           #+#    #+#             */
-/*   Updated: 2024/11/30 21:08:42 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/01 02:06:56 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,17 @@ ClapTrap::ClapTrap( void ) : hit_points(10), energy_points(10), attack_damage(0)
 
 ClapTrap::ClapTrap( std::string pname ) : name(pname), hit_points(10), energy_points(10), attack_damage(0)
 {
-    std::cout << "Default Parameterized Constructor is Called!" << std::endl;
+    std::cout << "Default Parameterized Constructor 0 is Called!" << std::endl;
+}
+
+ClapTrap::ClapTrap( unsigned int p_hp, unsigned int p_ep, unsigned int p_ad ) : hit_points(p_hp), energy_points(p_ep), attack_damage(p_ad)
+{
+    std::cout << "Default Parameterized Constructor 1 is Called!" << std::endl;
+}
+
+ClapTrap::ClapTrap( std::string p_name, unsigned int p_hp, unsigned int p_ep, unsigned int p_ad ) : name(p_name), hit_points(p_hp), energy_points(p_ep), attack_damage(p_ad)
+{
+    std::cout << "Default Parameterized Constructor 2 is Called!" << std::endl;
 }
 
 ClapTrap::ClapTrap( const ClapTrap &other )
@@ -63,7 +73,7 @@ void        ClapTrap::attack(const std::string& target)
     if (checkIfAble("attack"))
     {
         std::cout << "ClapTrap " << name << " attacks ";
-        std::cout <<  target << ", causing " << 10; 
+        std::cout <<  target << ", causing " << attack_damage; 
         std::cout << " points of damage!" << std::endl;
         energy_points--;
     }
@@ -71,7 +81,7 @@ void        ClapTrap::attack(const std::string& target)
 
 void        ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "ClapTrap " << name << " took ";
+    std::cout << "Trap " << name << " took ";
     std::cout << amount << " points of damage!" << std::endl;
     attack_damage += amount;
 }
@@ -80,7 +90,7 @@ void           ClapTrap::beRepaired(unsigned int amount)
 {
     if (checkIfAble("repair"))
     {
-        std::cout << "ClapTrap " << name << " repaired himself and got ";
+        std::cout << "Trap " << name << " repaired himself and got ";
         std::cout << amount << " hits points back!" << std::endl;
         energy_points--;
         hit_points += amount;
