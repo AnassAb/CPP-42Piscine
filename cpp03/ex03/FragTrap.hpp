@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 23:08:49 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/01 18:30:46 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:11:45 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,12 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
     public:
         FragTrap( void );
         ~FragTrap( void );
         FragTrap( std::string pname );
-        FragTrap( std::string p_name, unsigned int p_hp, unsigned int p_ep, unsigned int p_ad);
         FragTrap( const FragTrap& other );
 
         FragTrap&   operator=(const FragTrap& other);

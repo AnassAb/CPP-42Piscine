@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 18:39:58 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/01 02:38:22 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:27:41 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,14 @@
 
 ClapTrap::ClapTrap( void ) : hit_points(10), energy_points(10), attack_damage(0)
 {
-    std::cout << "Default Constructor is Called!" << std::endl;
+    std::cout << "ClapTrap Default Constructor" << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string pname ) : name(pname), hit_points(10), energy_points(10), attack_damage(0)
 {
-    std::cout << "Default Parameterized Constructor 0 is Called!" << std::endl;
+    std::cout << "ClapTrap Parameterized Constructor" << std::endl;
 }
 
-ClapTrap::ClapTrap( unsigned int p_hp, unsigned int p_ep, unsigned int p_ad ) : hit_points(p_hp), energy_points(p_ep), attack_damage(p_ad)
-{
-    std::cout << "Default Parameterized Constructor 1 is Called!" << std::endl;
-}
-
-ClapTrap::ClapTrap( std::string p_name, unsigned int p_hp, unsigned int p_ep, unsigned int p_ad ) : name(p_name), hit_points(p_hp), energy_points(p_ep), attack_damage(p_ad)
-{
-    std::cout << "Default Parameterized Constructor 2 is Called!" << std::endl;
-}
 
 ClapTrap::ClapTrap( const ClapTrap &other ) : 
     name(other.name),
@@ -39,17 +30,17 @@ ClapTrap::ClapTrap( const ClapTrap &other ) :
     energy_points(other.energy_points),
     attack_damage(other.attack_damage)
 {
-    std::cout << "ClapTrap Copy Constructor is Called!" << std::endl;
+    std::cout << "ClapTrap Copy Constructor" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "ClapTrap Destructor is Called!" << std::endl;
+    std::cout << "ClapTrap Default Destructor" << std::endl;
 }
 
 ClapTrap&   ClapTrap::operator=( const ClapTrap &other )
 {
-    std::cout << "ClapTrap Assignment Operator is Called!" << std::endl;
+    std::cout << "ClapTrap Assignment Operator" << std::endl;
     if (this != &other)
     {
         name = other.name;

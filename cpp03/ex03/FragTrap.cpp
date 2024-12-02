@@ -6,16 +6,23 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 23:27:38 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/01 21:26:52 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:26:31 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 
-FragTrap::FragTrap( void ) : ClapTrap(100, 100, 30)
+FragTrap::FragTrap( void )
 {
+    ClapTrap::hit_points = 100;
+    ClapTrap::energy_points = 100;
+    ClapTrap::attack_damage = 30;
     std::cout << "FragTrap Default Constructor" << std::endl;
+    std::cout << "\tName: void" << std::endl;
+    std::cout << "\tHP: " << hit_points << std::endl;
+    std::cout << "\tEP: " << energy_points << std::endl;
+    std::cout << "\tAD: " << attack_damage << std::endl;
 }
 
 FragTrap::~FragTrap( void ) 
@@ -23,14 +30,16 @@ FragTrap::~FragTrap( void )
     std::cout << "FragTrap Default Destructor" << std::endl;
 }
 
-FragTrap::FragTrap( std::string pname ) : ClapTrap(pname, 100, 100, 30)
+FragTrap::FragTrap( std::string pname ) : ClapTrap(pname)
 {
+    ClapTrap::hit_points = 100;
+    ClapTrap::energy_points = 100;
+    ClapTrap::attack_damage = 30;
     std::cout << "FragTrap Parameterized Constructor" << std::endl;
-}
-
-FragTrap::FragTrap( std::string p_name, unsigned int p_hp, unsigned int p_ep, unsigned int p_ad ) : ClapTrap(p_name, p_hp, p_ep, p_ad)
-{
-    std::cout << "FragTrap Full Parameterized Constructor" << std::endl;   
+    std::cout << "\tfName: " << name << std::endl;
+    std::cout << "\tfHP: " << hit_points << std::endl;
+    std::cout << "\tfEP: " << energy_points << std::endl;
+    std::cout << "\tfAD: " << attack_damage << std::endl;
 }
 
 FragTrap::FragTrap( const FragTrap& other ) : ClapTrap(other)

@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 23:27:38 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/01 02:06:02 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:18:42 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::~ScavTrap( void )
     std::cout << "ScavTrap Default Destructor" << std::endl;
 }
 
-ScavTrap::ScavTrap( std::string pname ) : ClapTrap(pname)
+ScavTrap::ScavTrap( std::string pname ) : ClapTrap(pname, 100, 50, 20)
 {
     std::cout << "ScavTrap Parameterized Constructor" << std::endl;
 }

@@ -6,16 +6,23 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 23:27:38 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/01 02:06:02 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:28:34 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap( void ) : ClapTrap(100, 50, 20)
+ScavTrap::ScavTrap( void )
 {
+    ClapTrap::hit_points = 100;
+    ClapTrap::energy_points = 50;
+    ClapTrap::attack_damage = 20;
     std::cout << "ScavTrap Default Constructor" << std::endl;
+    std::cout << "\tName: void" << std::endl;
+    std::cout << "\tHP: " << hit_points << std::endl;
+    std::cout << "\tEP: " << energy_points << std::endl;
+    std::cout << "\tAD: " << attack_damage << std::endl;
 }
 
 ScavTrap::~ScavTrap( void ) 
@@ -25,12 +32,14 @@ ScavTrap::~ScavTrap( void )
 
 ScavTrap::ScavTrap( std::string pname ) : ClapTrap(pname)
 {
+    ClapTrap::hit_points = 100;
+    ClapTrap::energy_points = 50;
+    ClapTrap::attack_damage = 20;
     std::cout << "ScavTrap Parameterized Constructor" << std::endl;
-}
-
-ScavTrap::ScavTrap( std::string p_name, unsigned int p_hp, unsigned int p_ep, unsigned int p_ad ) : ClapTrap(p_name, p_hp, p_ep, p_ad)
-{
-    std::cout << "ScavTrap Full Parameterized Constructor" << std::endl;   
+    std::cout << "\tsName: " << name << std::endl;
+    std::cout << "\tsHP: " << hit_points << std::endl;
+    std::cout << "\tsEP: " << energy_points << std::endl;
+    std::cout << "\tsAD: " << attack_damage << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap& other ) : ClapTrap(other)
