@@ -6,18 +6,15 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 23:27:38 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/02 15:28:34 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/03 13:18:55 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 #include <iostream>
 
-ScavTrap::ScavTrap( void )
+ScavTrap::ScavTrap( void ) : ClapTrap("", 100, 50, 20)
 {
-    ClapTrap::hit_points = 100;
-    ClapTrap::energy_points = 50;
-    ClapTrap::attack_damage = 20;
     std::cout << "ScavTrap Default Constructor" << std::endl;
     std::cout << "\tName: void" << std::endl;
     std::cout << "\tHP: " << hit_points << std::endl;

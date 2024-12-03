@@ -1,10 +1,10 @@
 CXX = c++
-CXXFLAGS = -Wshadow -Wall -Werror -Wextra -std=c++98 -pedantic 
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic 
 
-SRCS = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-NAME = DiamondTrap
+NAME = Animal
 
 all: $(NAME)
 

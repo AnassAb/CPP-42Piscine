@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 18:39:58 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/02 15:27:41 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/03 13:16:49 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ ClapTrap::ClapTrap( void ) : hit_points(10), energy_points(10), attack_damage(0)
 ClapTrap::ClapTrap( std::string pname ) : name(pname), hit_points(10), energy_points(10), attack_damage(0)
 {
     std::cout << "ClapTrap Parameterized Constructor" << std::endl;
+}
+
+ClapTrap::ClapTrap( std::string pname, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage ) :
+    name(pname), hit_points(hitPoints), energy_points(energyPoints), attack_damage(attackDamage)
+{
+    std::cout << "ClapTrap Enhanced Parameterized Constructor" << std::endl;
 }
 
 

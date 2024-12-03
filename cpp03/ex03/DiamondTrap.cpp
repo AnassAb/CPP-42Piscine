@@ -6,18 +6,15 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 21:32:35 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/02 20:15:34 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/03 13:29:58 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 #include <iostream>
 
-DiamondTrap::DiamondTrap( void )
+DiamondTrap::DiamondTrap( void ) : ClapTrap("", 100, 50, 30)
 {
-    hit_points = 100;
-    energy_points = 50;
-    attack_damage = 30;
     std::cout << "DiamondTrap Default Constructor" << std::endl;
     std::cout << "\tName: void" << std::endl;
     std::cout << "\tHP: " << hit_points << std::endl;
@@ -31,13 +28,8 @@ DiamondTrap::~DiamondTrap( void )
 }
 
 DiamondTrap::DiamondTrap( std::string pname ) : 
-    ClapTrap(pname + "_clap_name"), ScavTrap(pname), FragTrap(pname)
+    ClapTrap(pname + "_clap_name", 100, 50, 30), name(pname)
 {
-    name = pname;
-    hit_points = 100;
-    energy_points = 50;
-    attack_damage = 30;
-
     std::cout << "DiamondTrap Parameterized Constructor" << std::endl;
     std::cout << "\tName: " << name << std::endl;
     std::cout << "\tHP: " << hit_points << std::endl;

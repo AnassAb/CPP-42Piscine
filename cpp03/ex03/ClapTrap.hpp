@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 18:39:01 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/02 15:27:51 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/03 13:13:06 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ClapTrap
     public:
         ClapTrap( void );
         ClapTrap( std::string pname );
+        ClapTrap( std::string pname, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage );
         ClapTrap( const ClapTrap &other );
         virtual ~ClapTrap();
  

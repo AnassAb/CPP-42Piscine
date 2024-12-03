@@ -6,7 +6,7 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 23:08:49 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/02 15:04:27 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/02 20:31:43 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class ScavTrap : public ClapTrap
 {
     public:
-        ScavTrap( void );
         ~ScavTrap( void );
+        ScavTrap( void );
         ScavTrap( std::string pname );
         ScavTrap( std::string p_name, unsigned int p_hp, unsigned int p_ep, unsigned int p_ad);
         ScavTrap( const ScavTrap& other );

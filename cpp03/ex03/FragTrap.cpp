@@ -6,18 +6,15 @@
 /*   By: aabidar <aabidar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 23:27:38 by aabidar           #+#    #+#             */
-/*   Updated: 2024/12/02 15:26:31 by aabidar          ###   ########.fr       */
+/*   Updated: 2024/12/03 13:19:18 by aabidar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 
-FragTrap::FragTrap( void )
+FragTrap::FragTrap( void ) : ClapTrap("", 100, 100, 30)
 {
-    ClapTrap::hit_points = 100;
-    ClapTrap::energy_points = 100;
-    ClapTrap::attack_damage = 30;
     std::cout << "FragTrap Default Constructor" << std::endl;
     std::cout << "\tName: void" << std::endl;
     std::cout << "\tHP: " << hit_points << std::endl;
